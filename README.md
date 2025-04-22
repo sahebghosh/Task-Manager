@@ -28,8 +28,6 @@ A simple and modern task management web application built with **React** and **T
 
 ![Task View](./screenshots/tasks.png)
 
-> 💡 Place your screenshots in a folder named `/screenshots` inside the root of your project.
-
 ---
 
 ## 🛠️ Built With
