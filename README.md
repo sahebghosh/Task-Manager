@@ -1,12 +1,51 @@
-# React + Vite
+# 🗂️ Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and modern task management web application built with **React** and **Tailwind CSS**. This app allows users to create projects, manage tasks, and organize their workflow.
 
-Currently, two official plugins are available:
+![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Styled%20with-TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-green?logo=vercel)](https://your-deployed-url.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📝 Create and manage tasks
+- 📁 Organize tasks under projects
+- 🎯 Mark tasks as complete
+- 🌓 Light and dark mode support
+- 🔒 User authentication (coming soon)
+
+---
+
+## 🖼️ Screenshots
+
+### 🏠 Home Page
+
+![Home Page](./screenshots/home.png)
+
+### 🧩 Task View
+
+![Task View](./screenshots/tasks.png)
+
+> 💡 Place your screenshots in a folder named `/screenshots` inside the root of your project.
+
+---
+
+## 🛠️ Built With
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [GitHub](https://github.com/sahebghosh/Task-Manager)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/sahebghosh/Task-Manager.git
+cd Task-Manager
+npm install
+npm run dev
+```
