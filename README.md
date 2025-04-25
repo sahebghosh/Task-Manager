@@ -4,29 +4,27 @@ A simple and modern task management web application built with **React** and **T
 
 ![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Styled%20with-TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-green?logo=vercel)](https://your-deployed-url.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-orange)](#)
 
 ---
 
 ## 🚀 Features
 
-- 📝 Create and manage tasks
-- 📁 Organize tasks under projects
-- 🎯 Mark tasks as complete
-- 🌓 Light and dark mode support
-- 🔒 User authentication (coming soon)
+- 📝 Create and manage tasks (✅ Completed)
+- 🗂️ Organize tasks under projects (🔜 Coming Soon)
+- 🎯 Mark tasks as complete or pending (✅ Completed)
+- 🔎 Filter tasks by status (✅ Completed)
+- 🧹 Form validation and input error handling (✅ Completed)
+- 🌓 Light and dark mode support (🔜 Coming Soon)
+- 🔒 User authentication (🔜 Coming Soon)
+- 🛠️ API integration for real tasks (🔜 Coming Soon)
+- 🛤️ Multiple pages with Routing (🚀 In Progress)
 
 ---
 
 ## 🖼️ Screenshots
 
-### 🏠 Home Page
-
-![Home Page](./screenshots/home.png)
-
-### 🧩 Task View
-
-![Task View](./screenshots/tasks.png)
+> (Coming soon — after we add more features!)
 
 ---
 
@@ -35,7 +33,7 @@ A simple and modern task management web application built with **React** and **T
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
-- [GitHub](https://github.com/sahebghosh/Task-Manager)
+- [React Router](https://reactrouter.com/) (soon!)
 
 ---
 
