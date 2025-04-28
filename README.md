@@ -1,47 +1,60 @@
-# 🗂️ Task Manager App
+# 🚀 Task Manager App (React + TailwindCSS)
 
-A simple and modern task management web application built with **React** and **Tailwind CSS**. This app allows users to create projects, manage tasks, and organize their workflow.
-
-![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Styled%20with-TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Coming%20Soon-orange)](#)
+A modern task manager web application to create, edit, delete, and organize tasks — inspired by real-world tools like Asana and Trello.
 
 ---
 
-## 🚀 Features
+## ✨ Features Completed So Far
 
-- 📝 Create and manage tasks (✅ Completed)
-- 🗂️ Organize tasks under projects (🔜 Coming Soon)
-- 🎯 Mark tasks as complete or pending (✅ Completed)
-- 🔎 Filter tasks by status (✅ Completed)
-- 🧹 Form validation and input error handling (✅ Completed)
-- 🌓 Light and dark mode support (🔜 Coming Soon)
-- 🔒 User authentication (🔜 Coming Soon)
-- 🛠️ API integration for real tasks (🔜 Coming Soon)
-- 🛤️ Multiple pages with Routing (🚀 In Progress)
-
----
-
-## 🖼️ Screenshots
-
-> (Coming soon — after we add more features!)
+- ✅ **Create Tasks** with Title and Description
+- ✅ **Display Tasks** dynamically
+- ✅ **Mark Tasks** as Completed / Pending
+- ✅ **Edit Tasks** using a Modal (popup form)
+- ✅ **Delete Tasks** smoothly
+- ✅ **Filtering** tasks (All | Completed | Pending)
+- ✅ **Success Toast Messages** (for add/edit/delete)
+- ✅ **Framer Motion Animations** for task cards
+- ✅ **Dark/Light Theme Switcher**
+- ✅ **Sticky Responsive Navbar with Hamburger Menu**
+- ✅ **Clean and responsive design using Tailwind CSS**
 
 ---
 
-## 🛠️ Built With
+## 🔥 Features Coming Soon (Work In Progress)
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-- [React Router](https://reactrouter.com/) (soon!)
+- 🚀 **Drag and Drop Tasks** (Kanban Board: Todo, In Progress, Done)
+- 🚀 **Search Tasks** with a search bar
+- 🚀 **Due Dates and Priorities** for tasks
+- 🚀 **Task Categories / Tags** for better organization
+- 🚀 **Save Tasks to Backend Database** (Coming in later phases)
+- 🚀 **User Authentication** (Login/Register)
+- 🚀 **Deployment** on Vercel / Netlify (Live Demo)
+- 🚀 **Progress Tracking** (like % of tasks completed)
+- 🚀 **Advanced Animations** with Framer Motion (page transitions, drag animations)
+- 🚀 **Accessibility Improvements** (Keyboard + Screen reader support)
+- 🚀 **Unit Testing** (React Testing Library)
 
 ---
 
-## 📦 Installation
+## 📸 Screenshots (Coming soon)
+
+---
+
+## 🚀 Tech Stack
+
+- **React** (Vite setup)
+- **Tailwind CSS**
+- **Framer Motion** (for animations)
+- **Lucide-react** (for icons)
+- **React Hot Toast** (for toasts/snackbars)
+
+---
+
+## 🛠 How to Run Locally
 
 ```bash
-git clone https://github.com/sahebghosh/Task-Manager.git
-cd Task-Manager
+git clone https://github.com/yourusername/task-manager.git
+cd task-manager
 npm install
 npm run dev
 ```
