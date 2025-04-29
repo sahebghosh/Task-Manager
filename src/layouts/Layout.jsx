@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { showSuccess } from '../utils/toastUtils';
 
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    showSuccess('Logged out successfully!');
+    navigate('/login');
+  };
 
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
@@ -18,8 +26,8 @@ const Layout = () => {
           <div className="flex items-center gap-4 relative">
             {/* Desktop Nav */}
             <div className="hidden md:flex gap-8">
-              {['/', '/create', '/about'].map((path, i) => {
-                const label = ['Home', 'Create Task', 'About'][i];
+              {['/', '/board', '/about'].map((path, i) => {
+                const label = ['Home', 'Kanban Board', 'About'][i];
                 return (
                   <NavLink
                     key={path}
@@ -48,6 +56,15 @@ const Layout = () => {
               {darkMode ? '☀️ Light' : '🌙 Dark'}
             </button>
 
+            {/* Logout Button (Desktop) */}
+            <button
+              onClick={handleLogout}
+              className="hidden md:block bg-white hover:bg-red-600 hover:text-white px-4 py-1 rounded-full text-black font-semibold transition"
+              title="Logout"
+            >
+              Logout
+            </button>
+
             {/* Hamburger Icon (Mobile only) */}
             <button
               className="md:hidden block"
@@ -62,8 +79,8 @@ const Layout = () => {
               <div className="absolute right-0 top-14 z-50">
                 <div className="bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-lg w-44 overflow-hidden">
                   <div className="flex flex-col divide-y divide-gray-200 dark:divide-gray-700">
-                    {['/', '/create', '/about'].map((path, i) => {
-                      const label = ['Home', 'Create Task', 'About'][i];
+                    {['/', '/board', '/about'].map((path, i) => {
+                      const label = ['Home', 'Kanban Board', 'About'][i];
                       return (
                         <NavLink
                           key={path}
@@ -82,6 +99,16 @@ const Layout = () => {
                         </NavLink>
                       );
                     })}
+                    {/* Logout inside mobile dropdown */}
+                    <button
+                      onClick={() => {
+                        setMenuOpen(false);
+                        handleLogout();
+                      }}
+                      className="px-4 py-2 text-center transition-all duration-200 hover:bg-blue-100 dark:hover:bg-gray-700 hover:scale-105 text-red-600 dark:text-red-400 font-bold"
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
               </div>

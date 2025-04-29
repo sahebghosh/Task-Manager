@@ -1,65 +1,108 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import CreateTask from './pages/CreateTask';
+import Login from './pages/Login';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Layout from './layouts/Layout';
-import { showSuccess, showError } from './utils/toastUtils';
+import PrivateRoute from './components/PrivateRoute';
 import { Toaster } from 'react-hot-toast';
+import Board from './pages/Board';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (newTask) => {
-    setTasks((prev) => [...prev, newTask]);
-    showSuccess('Task added successfully!');
-  };
-
-  const deleteTask = (taskId) => {
-    setTasks((prev) => prev.filter((task) => task.id !== taskId));
-    showSuccess('Task deleted successfully!');
-  };
-
-  const editTask = (taskId, updatedTitle, updatedDescription) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId
-          ? { ...task, title: updatedTitle, description: updatedDescription }
-          : task
-      )
-    );
-    showSuccess('Task updated successfully!');
-  };
-
-  const toggleTaskStatus = (taskId) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
-      )
-    );
-  };
+  const [columns, setColumns] = useState({
+    todo: {
+      name: 'Todo',
+      items: [
+        {
+          id: '1',
+          title: 'Learn Drag and Drop',
+          description: 'Understand how react-dnd works.',
+          priority: 'high',
+          dueDate: '2025-05-01',
+        },
+        {
+          id: '2',
+          title: 'Setup Kanban Layout',
+          description: 'Create 4 columns (Todo, In Progress, Review, Done).',
+          priority: 'medium',
+          dueDate: '2025-05-03',
+        },
+      ],
+    },
+    inProgress: {
+      name: 'In Progress',
+      items: [
+        {
+          id: '3',
+          title: 'Build Board UI',
+          description: 'Create responsive, draggable columns.',
+          priority: 'high',
+          dueDate: '2025-05-05',
+        },
+      ],
+    },
+    review: {
+      name: 'Review',
+      items: [
+        {
+          id: '4',
+          title: 'Code Review Tasks',
+          description: 'Review DnD implementation with teammates.',
+          priority: 'medium',
+          dueDate: '2025-02-07',
+        },
+      ],
+    },
+    done: {
+      name: 'Done',
+      items: [
+        {
+          id: '5',
+          title: 'Deploy App',
+          description: 'Push final build to Netlify!',
+          priority: 'low',
+          dueDate: '2025-05-10',
+        },
+      ],
+    },
+  });
 
   return (
     <div className="min-h-screen">
       <Toaster position="bottom-center" />
       <Routes>
+        <Route path="/login" element={<Login />} />
+
         <Route path="/" element={<Layout />}>
           <Route
             index
             element={
-              <Home
-                tasks={tasks}
-                toggleTaskStatus={toggleTaskStatus}
-                deleteTask={deleteTask}
-                editTask={editTask}
-              />
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
             }
           />
-          <Route path="create" element={<CreateTask addTask={addTask} />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="board"
+            element={
+              <PrivateRoute>
+                <Board columns={columns} setColumns={setColumns} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <PrivateRoute>
+                <About />
+              </PrivateRoute>
+            }
+          />
         </Route>
+
+        {/* Redirect unknown routes */}
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </div>
   );
