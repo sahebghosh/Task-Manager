@@ -4,6 +4,10 @@
 
 ---
 
+## 🌍 Live Demo
+
+👉 [View Task Manager App Here!](https://task-manager-three-eosin.vercel.app)
+
 ## 🌟 Features
 
 - ✅ Modern Home Page + Login Authentication
