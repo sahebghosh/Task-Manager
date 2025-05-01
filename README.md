@@ -50,7 +50,7 @@
 ## 🛠 How to Run Locally
 
 ```bash
-git clone https://github.com/yourusername/task-manager.git
+git clone https://github.com/sahebghosh/Task-Manager.git
 cd task-manager
 npm install
 npm run dev
